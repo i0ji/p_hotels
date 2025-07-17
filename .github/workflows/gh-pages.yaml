@@ -5,7 +5,9 @@ on:
     branches: [ master ]
 
 permissions:
-  contents: write
+  id-token: write
+  pages: write
+  contents: read
 
 jobs:
   build-and-deploy:
