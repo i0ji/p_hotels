@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+// import 'package:telegram_web_app/telegram_web_app.dart';
 
 class Hotel {
   final String name;
   final String imagePath;
   final String description;
 
-  Hotel({required this.name, required this.imagePath, required this.description});
+  Hotel({
+    required this.name,
+    required this.imagePath,
+    required this.description,
+  });
 }
 
 final List<Hotel> hotels = [
@@ -19,14 +24,19 @@ final List<Hotel> hotels = [
     imagePath: 'assets/2.jpg',
     description: 'Отдых в горах с отличным сервисом.',
   ),
-   Hotel(
+  Hotel(
     name: 'Mountain Resort',
     imagePath: 'assets/3.jpg',
     description: 'Супер-пупер что-то там',
   ),
 ];
 
-void main() {
+void main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // if (TelegramWebApp.instance.isSupported) {
+  //   TelegramWebApp.instance.ready();
+  //   TelegramWebApp.instance.expand();
+  // }
   runApp(const MyApp());
 }
 
@@ -64,7 +74,9 @@ class HotelsListPage extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (_) => HotelDetailPage(hotel: hotel)),
+                MaterialPageRoute(
+                  builder: (_) => HotelDetailPage(hotel: hotel),
+                ),
               );
             },
             child: Card(
@@ -73,16 +85,16 @@ class HotelsListPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Expanded(
-                    child: Image.asset(
-                      hotel.imagePath,
-                      fit: BoxFit.cover,
-                    ),
+                    child: Image.asset(hotel.imagePath, fit: BoxFit.cover),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       hotel.name,
-                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                   ),

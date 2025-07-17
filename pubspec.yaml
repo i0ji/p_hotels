@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  telegram_web_app: ^0.0.3
 
   cupertino_icons: ^1.0.8
 
@@ -20,6 +21,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-   - assets/1.jpg
-   - assets/2.jpg
-   - assets/3.jpg
+    - assets/
