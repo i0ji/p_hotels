@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:telegram_web_app/telegram_web_app.dart';
+import 'package:telegram_web_app/telegram_web_app.dart';
 
 class Hotel {
   final String name;
@@ -32,11 +32,11 @@ final List<Hotel> hotels = [
 ];
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // if (TelegramWebApp.instance.isSupported) {
-  //   TelegramWebApp.instance.ready();
-  //   TelegramWebApp.instance.expand();
-  // }
+  WidgetsFlutterBinding.ensureInitialized();
+  if (TelegramWebApp.instance.isSupported) {
+    TelegramWebApp.instance.ready();
+    TelegramWebApp.instance.expand();
+  }
   runApp(const MyApp());
 }
 
